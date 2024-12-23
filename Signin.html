@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+    h5 {
+      font-weight: 100px;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 35px;
+    }
+    .toggle-options {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .toggle-options p {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    .toggle-options p:hover {
+      color: #aaa;
+    }
+    .form-section {
+      display: none;
+      margin-bottom: 20px;
+    }
+    #phone-section {
+      display: block;
+    }
+    label {
+      font-size: 14px;
+      color: #ccc;
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #555;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+    }
+    input::placeholder {
+      color: #888;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: #fff;
+    }
+    .divider hr {
+      flex-grow: 1;
+      border: none;
+      border-top: 1px solid #555;
+    }
+    .divider span {
+      margin: 0 10px;
+    }
+    .google {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .google-option {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #aaa;
+      border-radius: 46px;
+      padding: 10px 0px 10px 100px;
+      gap: 10px;
+    }
+    .google img {
+      width: 30px;
+      height: 30px;
+    }
+    .google p {
+      margin: 0;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgb(37, 35, 35);
+      color: white;
+      padding: 10px 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      display: flex; 
+      align-items: center; 
+      font-size: 20px; 
+      color: white; 
+      gap: 15px; 
+      text-decoration: none; 
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto; 
+      border-radius: 5px; 
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 60px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .btn a {
+      background-color: #00ffff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-right: 40px;
+      cursor: pointer;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+  
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><img src="https://ik.imagekit.io/sheryians/Sheryians_Logo_wFKd9VClG.png" alt="school.png" >Sheryians coding school</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/kavya/part1.html">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#Bootcamp(Kodr)">Bootcamp(Kodr)</a></li>
+            <li><a href="#RequestCallback">Request Callback</a></li>
+        </ul>
+    </nav>
+    <div class="btn"><a href="/kavya/Signin.html">Signin</a></div>
+</header>
+  <div class="container">
+    <h5>Sign In</h5>
+    <div class="toggle-options">
+      <p id="phone-option">Phone</p>
+      <p id="email-option">Email</p>
+    </div>
+    <div id="phone-section" class="form-section">
+      <label for="mobile">Mobile Number *</label>
+      <input type="text" id="mobile" placeholder="Enter Your Mobile Number">
+    </div>
+    <div id="email-section" class="form-section">
+      <label for="email">Email Address</label>
+      <input type="text" id="email" placeholder="Enter Your Email Address">
+      <label for="password">Password</label>
+      <input type="password" placeholder="Enter your password here">
+    </div>
+    <div class="divider">
+      <hr>
+      <span>Or</span>
+      <hr>
+    </div>
+    <div class="google">
+      <div class="google-option">
+        <img src="https://www.pngmart.com/files/16/Google-Logo-PNG-Image.png" alt="Google Logo">
+        <p>Continue with Google</p>
+      </div>
+      <div class="google-option">
+        <img src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png" alt="User Logo">
+        <p>Create a New Account</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const phoneOption = document.getElementById('phone-option');
+    const emailOption = document.getElementById('email-option');
+    const phoneSection = document.getElementById('phone-section');
+    const emailSection = document.getElementById('email-section');
+
+    phoneOption.addEventListener('click', () => {
+      phoneSection.style.display = 'block';
+      emailSection.style.display = 'none';
+    });
+
+    emailOption.addEventListener('click', () => {
+      emailSection.style.display = 'block';
+      phoneSection.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
